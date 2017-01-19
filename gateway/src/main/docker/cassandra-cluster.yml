@@ -1,0 +1,27 @@
+version: '2'
+services:
+    frontend-cassandra:
+        container_name: frontend-cassandra
+        image: cassandra:3.9
+        # volumes:
+        #     - ~/volumes/jhipster/frontend/cassandra/:/var/lib/cassandra/data
+        ports:
+            - 7000:7000
+            - 7001:7001
+            - 7199:7199
+            - 9042:9042
+            - 9160:9160
+    frontend-cassandra-node:
+        image: cassandra:3.9
+        links:
+            - frontend-cassandra:seed
+        environment:
+            - CASSANDRA_SEEDS=seed
+    frontend-cassandra-migration:
+        extends:
+            file: cassandra-migration.yml
+            service: frontend-cassandra-migration
+        links:
+            - frontend-cassandra
+        environment:
+            - CREATE_KEYSPACE_SCRIPT=create-keyspace-prod.cql

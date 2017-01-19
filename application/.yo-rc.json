@@ -1,0 +1,35 @@
+{
+  "generator-jhipster": {
+    "jhipsterVersion": "3.12.2",
+    "baseName": "core",
+    "packageName": "com.mycompany.myapp",
+    "packageFolder": "com/mycompany/myapp",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "hibernateCache": "hazelcast",
+    "clusteredHttpSession": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSocialSignIn": false,
+    "jwtSecretKey": "a3a1f65f66525431d92edeb001fb529a3e556e16",
+    "enableTranslation": true,
+    "applicationType": "microservice",
+    "testFrameworks": [
+      "gatling"
+    ],
+    "jhiPrefix": "jhi",
+    "skipClient": true,
+    "skipUserManagement": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "hi"
+    ]
+  }
+}
